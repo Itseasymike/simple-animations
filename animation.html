@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animator</title>
+	<style>
+		body {
+			background: url("bg.jpg") no-repeat center fixed;
+		}
+		nav {
+			margin: 0 auto;
+			text-align: center;
+			background-color: #999999;
+			width: 10%;
+			border-radius: 5px;
+		}
+		nav:hover ul {
+			display: block;
+			font-family: Impact;
+		}
+		ul {
+			display: none;
+			list-style: none;
+			background-color: #b3b3b3;
+			padding: 5px;
+		}
+		#myContainer {
+			width:400px;
+			height: 400px;
+			position: absolute;
+			background-color: rgba(0,0,0,0);
+		}
+		#myAnimation {
+			width: 50px;
+			height: 50px;
+			position: relative;
+		}
+		img {
+			border-radius: 10px;
+		}
+		p {
+			font-size: 34px;
+		}
+	</style>
+</head>
+<body>
+	<nav>MENU
+		<ul>
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">BREEDS</a></li>
+			<li><a href="#">ADOPT</a></li>
+			<li><a href="#">DONATE</a></li>
+			<li><a href="#">CAREERS</a></li>
+		</ul>
+	</nav>	
+		<p>
+			<button onclick="move()">Click Me!</button>
+		</p>
+
+		<div id="myContainer"></div>
+		<div id="myAnimation"><img src="pit.jpg"></a></div>
+
+</body>
+<script>
+	function move() {
+		var elem = document.getElementById('myAnimation');
+		var pos = 0;
+		var id = setInterval(frame , 5);
+		function frame() {
+			if (pos == 1120) {
+				clearInterval(id);
+			} else {
+				pos++;
+				elem.style.left = pos + 'px';
+			}
+		}
+	}
+</script>
+</html>
